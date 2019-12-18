@@ -133,7 +133,8 @@ Container.propTypes = {
 Container.defaultProps = {
 	behaviour: 'move',
 	orientation: 'vertical',
-	className: 'reactTrelloBoard'
+	className: 'reactTrelloBoard',
+	dragBeginDelay: 0
 };
 
 export default Container;
