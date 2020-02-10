@@ -73,13 +73,6 @@ class Container extends _react.Component {
 
     if (this.props.onDragStart) {
       functionProps.onDragStart = (...p) => this.props.onDragStart(...p);
-    } else {
-      functionProps.onDragStart = () => {
-        this.containerRef.scrollTop = this.containerRef.scrollTop - 1; // will not scroll up 1px if scrollTop is zero =>
-        // do not scroll it down to avoid page moving
-
-        if (this.containerRef.scrollTop > 0) this.containerRef.scrollTop = this.containerRef.scrollTop + 1;
-      };
     }
 
     if (this.props.onDragEnd) {
@@ -128,9 +121,9 @@ class Container extends _react.Component {
 }
 
 Container.propTypes = {
-  behaviour: _propTypes.default.oneOf(['move', 'copy', 'drag-zone']),
+  behaviour: _propTypes.default.oneOf(["move", "copy", "drag-zone"]),
   groupName: _propTypes.default.string,
-  orientation: _propTypes.default.oneOf(['horizontal', 'vertical']),
+  orientation: _propTypes.default.oneOf(["horizontal", "vertical"]),
   style: _propTypes.default.object,
   dragHandleSelector: _propTypes.default.string,
   className: _propTypes.default.string,
